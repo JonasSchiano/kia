@@ -1,0 +1,11 @@
+{
+  "scriptId": "312",
+  "url": "file:///C:/Users/micha_8ygdgy8/Fathym/OpenSource/fathym-deno/kia/test.deps.ts",
+  "functions": [
+    {
+      "functionName": "",
+      "ranges": [{ "startOffset": 0, "endOffset": 87, "count": 1 }],
+      "isBlockCoverage": true
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
-  "scriptId": "312",
-  "url": "file:///C:/Users/micha_8ygdgy8/Fathym/OpenSource/fathym-deno/kia/mod.ts",
-  "functions": [
-    {
-      "functionName": "",
-      "ranges": [{ "startOffset": 0, "endOffset": 90, "count": 1 }],
-      "isBlockCoverage": true
-    }
-  ]
+	"scriptId": "312",
+	"url": "file:///C:/Users/micha_8ygdgy8/Fathym/OpenSource/fathym-deno/kia/mod.ts",
+	"functions": [
+		{
+			"functionName": "",
+			"ranges": [{ "startOffset": 0, "endOffset": 90, "count": 1 }],
+			"isBlockCoverage": true
+		}
+	]
 }
