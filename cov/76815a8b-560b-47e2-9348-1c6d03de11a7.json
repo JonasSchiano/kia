@@ -1,0 +1,39 @@
+{
+	"scriptId": "350",
+	"url": "file:///C:/Users/micha_8ygdgy8/Fathym/OpenSource/fathym-deno/kia/util.ts",
+	"functions": [
+		{
+			"functionName": "",
+			"ranges": [{ "startOffset": 0, "endOffset": 1024, "count": 1 }],
+			"isBlockCoverage": true
+		},
+		{
+			"functionName": "colorise",
+			"ranges": [{ "startOffset": 241, "endOffset": 293, "count": 15 }],
+			"isBlockCoverage": true
+		},
+		{
+			"functionName": "writeLine",
+			"ranges": [
+				{ "startOffset": 425, "endOffset": 571, "count": 17 },
+				{ "startOffset": 532, "endOffset": 552, "count": 0 }
+			],
+			"isBlockCoverage": true
+		},
+		{
+			"functionName": "clearLine",
+			"ranges": [{ "startOffset": 637, "endOffset": 735, "count": 6 }],
+			"isBlockCoverage": true
+		},
+		{
+			"functionName": "hideCursor",
+			"ranges": [{ "startOffset": 780, "endOffset": 879, "count": 9 }],
+			"isBlockCoverage": true
+		},
+		{
+			"functionName": "showCursor",
+			"ranges": [{ "startOffset": 924, "endOffset": 1023, "count": 6 }],
+			"isBlockCoverage": true
+		}
+	]
+}

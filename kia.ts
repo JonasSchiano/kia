@@ -1,7 +1,7 @@
-import { Spinner, Spinners } from "./spinners.ts";
+import { type Spinner, Spinners } from "./spinners.ts";
 import {
 	clearLine,
-	Color,
+	type Color,
 	colorise,
 	hideCursor,
 	showCursor,
@@ -48,7 +48,7 @@ export default class Kia {
 		this.render();
 	}
 
-	public set(options: InputOptions | string) {
+	public set(options: InputOptions | string): this {
 		if (typeof options === "string") {
 			options = {
 				text: options,
@@ -63,7 +63,7 @@ export default class Kia {
 	 * Starts the spinner
 	 * @param text The text to display after the spinner
 	 */
-	start(text?: string) {
+	start(text?: string): this {
 		if (this.spinning) {
 			this.stop();
 		}
@@ -88,7 +88,7 @@ export default class Kia {
 	 * Stops the spinner and holds it in a static state. Returns the instance.
 	 * @param options The options to apply after stopping the spinner
 	 */
-	stopAndPersist(options?: InputOptions) {
+	stopAndPersist(options?: InputOptions): this {
 		clearInterval(this.timeoutRef);
 		this.spinning = false;
 		if (options) this.set(options);
@@ -98,7 +98,7 @@ export default class Kia {
 	/**
 	 * Renders the next frame of the spinner when it is stopped.
 	 */
-	renderNextFrame() {
+	renderNextFrame(): this {
 		if (this.spinning) {
 			throw new Error(
 				"You cannot manually render frames when the spinner is running, run stopAndPersist() first.",
@@ -113,7 +113,7 @@ export default class Kia {
 	/**
 	 * Stops the spinner and clears its line
 	 */
-	stop() {
+	stop(): this {
 		clearInterval(this.timeoutRef);
 		clearLine(this.options.writer, this.textEncoder);
 		if (!this.options.cursor) {
@@ -128,7 +128,7 @@ export default class Kia {
 	 * @param text The message to show when stopped
 	 * @param flair The icon to prepend the message
 	 */
-	stopWithFlair(text: string = this.options.text, flair: string) {
+	stopWithFlair(text: string = this.options.text, flair: string): this {
 		this.stop();
 		writeLine(
 			this.options.writer,
@@ -145,7 +145,7 @@ export default class Kia {
 	 * The function is a wrapper around ```stopWithFlair```.
 	 * @param text The message to be shown when stopped
 	 */
-	succeed(text: string = this.options.text) {
+	succeed(text: string = this.options.text): this {
 		return this.stopWithFlair(
 			text,
 			Colors.bold(
@@ -162,7 +162,7 @@ export default class Kia {
 	 * The function is a wrapper around ```stopWithFlair```.
 	 * @param text The message to be shown when stopped
 	 */
-	fail(text: string = this.options.text) {
+	fail(text: string = this.options.text): this {
 		return this.stopWithFlair(text, Colors.bold(Colors.red("X")));
 	}
 
@@ -172,7 +172,7 @@ export default class Kia {
 	 * The function is a wrapper around ```stopWithFlair```.
 	 * @param text The message to be shown when stopped
 	 */
-	warn(text: string = this.options.text) {
+	warn(text: string = this.options.text): this {
 		return this.stopWithFlair(text, Colors.bold(Colors.yellow("!")));
 	}
 
@@ -182,7 +182,7 @@ export default class Kia {
 	 * The function is a wrapper around ```stopWithFlair```.
 	 * @param text The message to be shown when stopped
 	 */
-	info(text: string = this.options.text) {
+	info(text: string = this.options.text): this {
 		return this.stopWithFlair(text, Colors.bold(Colors.blue("i")));
 	}
 
@@ -228,8 +228,12 @@ export default class Kia {
 /**
  * Starts a spinner for a promise
  */
-// deno-lint-ignore ban-types
-export const forPromise = async (action: Function, options: InputOptions) => {
+export const forPromise: (
+	// deno-lint-ignore ban-types
+	action: Function,
+	options: InputOptions,
+	// deno-lint-ignore ban-types
+) => Promise<Kia> = async (action: Function, options: InputOptions) => {
 	const kia = new Kia(options).start();
 
 	await (async () => {
