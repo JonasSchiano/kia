@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
   
 env:
-  MainBranch: main
+  MainBranch: master
   MainFormat: '${major}.${minor}.${patch}'
 
 jobs:
