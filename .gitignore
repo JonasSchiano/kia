@@ -1,3 +1,5 @@
 kiatest.ts
 .vim/
 .vscode/
+.idea/
+cov/

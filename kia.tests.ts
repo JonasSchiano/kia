@@ -1,7 +1,10 @@
-import Kia, { forPromise, Spinners } from "./mod.ts";
-import { assertThrows, expect } from "./test.deps.ts";
+import { assertThrows } from '@std/assert';
+import { expect } from "@std/expect";
+import type { WriterSync } from "@std/io";
 
-class TestWriter implements Deno.WriterSync {
+import Kia, { forPromise, Spinners } from "./mod.ts";
+
+class TestWriter implements WriterSync {
 	buffer: number[] = [];
 	writeSync(p: Uint8Array): number {
 		p.forEach((pi) => {

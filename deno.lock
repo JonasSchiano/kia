@@ -1,34 +1,53 @@
 {
-  "version": "3",
-  "packages": {
-    "specifiers": {
-      "jsr:@std/assert@1.0.3": "jsr:@std/assert@1.0.3",
-      "jsr:@std/assert@^1.0.3": "jsr:@std/assert@1.0.3",
-      "jsr:@std/expect@1.0.1": "jsr:@std/expect@1.0.1",
-      "jsr:@std/fmt@1.0.1": "jsr:@std/fmt@1.0.1",
-      "jsr:@std/internal@^1.0.2": "jsr:@std/internal@1.0.2"
+  "version": "4",
+  "specifiers": {
+    "jsr:@std/assert@1.0.11": "1.0.11",
+    "jsr:@std/assert@^1.0.11": "1.0.11",
+    "jsr:@std/bytes@^1.0.5": "1.0.5",
+    "jsr:@std/expect@1.0.13": "1.0.13",
+    "jsr:@std/fmt@1.0.5": "1.0.5",
+    "jsr:@std/internal@^1.0.5": "1.0.5",
+    "jsr:@std/io@~0.225.2": "0.225.2"
+  },
+  "jsr": {
+    "@std/assert@1.0.11": {
+      "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
     },
-    "jsr": {
-      "@std/assert@1.0.3": {
-        "integrity": "b0d03ce1ced880df67132eea140623010d415848df66f6aa5df76507ca7c26d8",
-        "dependencies": [
-          "jsr:@std/internal@^1.0.2"
-        ]
-      },
-      "@std/expect@1.0.1": {
-        "integrity": "44075d9c2cb701ddfc4d5a260da2fb26ba3cfd94c45d3a0359f63cabbf85a058",
-        "dependencies": [
-          "jsr:@std/assert@^1.0.3",
-          "jsr:@std/internal@^1.0.2"
-        ]
-      },
-      "@std/fmt@1.0.1": {
-        "integrity": "ef76c37faa7720faa8c20fd8cc74583f9b1e356dfd630c8714baa716a45856ab"
-      },
-      "@std/internal@1.0.2": {
-        "integrity": "f4cabe2021352e8bfc24e6569700df87bf070914fc38d4b23eddd20108ac4495"
-      }
+    "@std/bytes@1.0.5": {
+      "integrity": "4465dd739d7963d964c809202ebea6d5c6b8e3829ef25c6a224290fbb8a1021e"
+    },
+    "@std/expect@1.0.13": {
+      "integrity": "d8e236c7089cd9fcf5e6032f27dadc3db6349d0aee48c15bc71d717bca5baa42",
+      "dependencies": [
+        "jsr:@std/assert@^1.0.11",
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/fmt@1.0.5": {
+      "integrity": "0cfab43364bc36650d83c425cd6d99910fc20c4576631149f0f987eddede1a4d"
+    },
+    "@std/internal@1.0.5": {
+      "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    },
+    "@std/io@0.225.2": {
+      "integrity": "3c740cd4ee4c082e6cfc86458f47e2ab7cb353dc6234d5e9b1f91a2de5f4d6c7",
+      "dependencies": [
+        "jsr:@std/bytes"
+      ]
     }
   },
-  "remote": {}
+  "remote": {
+    "https://raw.githubusercontent.com/ameerthehacker/cli-spinners/master/spinners.ts": "14f0423feb65235f0ae2ed2dbc4b8206e36c1d0043c508440f94ac0ee940263f"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@1.0.11",
+      "jsr:@std/expect@1.0.13",
+      "jsr:@std/fmt@1.0.5",
+      "jsr:@std/io@~0.225.2"
+    ]
+  }
 }
