@@ -1,5 +1,7 @@
 # Kia
 
+> This is a fork of ["fathym-deno"s Version of kia](https://github.com/fathym-deno/kia) which didn't work with Deno 2 at the time of this fork.
+
 > Simple terminal spinners for Deno 🦕
 
 `Version 0.4.1`
@@ -45,7 +47,9 @@ mapped to `Options.text`
 
 ```typescript
 const kia = new Kia("Hello");
-// or
+```
+or
+```typescript
 const kia = new Kia({
 	text: "Hello",
 	color: "Red",
